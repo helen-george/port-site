@@ -76,13 +76,6 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: Create .env.local
-        working-directory: /
-        run: |
-          echo "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}" > .env.local
-          echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}" >> .env.local
-          echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}" >> .env.local
-          echo "CLOUDINARY_FOLDER=${{ secrets.CLOUDINARY_FOLDER }}" >> .env.local
       - name: Clean build cache
         working-directory: /
         run: rm -rf .next out
