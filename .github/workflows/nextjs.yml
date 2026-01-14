@@ -83,6 +83,9 @@ jobs:
           echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}" >> .env.local
           echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}" >> .env.local
           echo "CLOUDINARY_FOLDER=${{ secrets.CLOUDINARY_FOLDER }}" >> .env.local
+      - name: Clean build cache
+        working-directory: ./with-cloudinary-app
+        run: rm -rf .next out
       - name: Install dependencies
         working-directory: ./with-cloudinary-app
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
