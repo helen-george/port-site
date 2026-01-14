@@ -92,7 +92,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./with-cloudinary-app/pages
+          path: ./with-cloudinary-app/out
 
   # Deployment job
   deploy:
