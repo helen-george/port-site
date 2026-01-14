@@ -84,19 +84,19 @@ jobs:
           echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}" >> .env.local
           echo "CLOUDINARY_FOLDER=${{ secrets.CLOUDINARY_FOLDER }}" >> .env.local
       - name: Clean build cache
-        working-directory: ./with-cloudinary-app
+        working-directory: /
         run: rm -rf .next out
       - name: Install dependencies
-        working-directory: ./with-cloudinary-app
+        working-directory: /
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
-        working-directory: ./with-cloudinary-app
+        working-directory: /
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./with-cloudinary-app/out
+          path: /out
 
   # Deployment job
   deploy:
