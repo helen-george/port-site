@@ -56,7 +56,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   }
 
-  currentPhoto.blurDataUrl = await getBase64ImageUrl(currentPhoto);
+  try {
+    currentPhoto.blurDataUrl = await getBase64ImageUrl(currentPhoto);
+  } catch (error) {
+    console.error("Error generating blur placeholder:", error);
+    currentPhoto.blurDataUrl = "";
+  }
 
   return {
     props: {
