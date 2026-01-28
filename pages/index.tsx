@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 import Bridge from "../components/Icons/Bridge";
-import Logo from "../components/Icons/Logo";
 import Modal from "../components/Modal";
 import cloudinary from "../utils/cloudinary";
 import getBase64ImageUrl from "../utils/generateBlurPlaceholder";
@@ -33,11 +32,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <title>ersdgz</title>
         <meta
           property="og:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
+          content="https://res.cloudinary.com/dwzycyb33/image/upload/v1769585750/website_thumbnail_ltgnox.png"
         />
         <meta
           name="twitter:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
+          content="https://res.cloudinary.com/dwzycyb33/image/upload/v1769585750/website_thumbnail_ltgnox.png"
         />
       </Head>
       <main className="mx-auto max-h-[100%] max-w-[100%] p-4">
